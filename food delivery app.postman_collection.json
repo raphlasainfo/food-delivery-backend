@@ -1,0 +1,771 @@
+{
+  "info": {
+    "_postman_id": "bcc76b77-d16a-4209-860f-5044a998781e",
+    "name": "food delivery app",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58360864",
+    "_collection_link": "https://go.postman.co/collection/58360864-bcc76b77-d16a-4209-860f-5044a998781e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "menu-items",
+      "item": [
+        {
+          "name": "allItems",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/menu-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "menu-items"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "specific-items",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/menu-items?outlet_id=10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "menu-items"
+              ],
+              "query": [
+                {
+                  "key": "outlet_id",
+                  "value": "10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Items",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"outlet_id\": \"10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11\",\r\n  \"name\": \"Classic Cheeseburger\",\r\n  \"description\": \"Juicy grilled beef patty with cheddar cheese and fresh lettuce\",\r\n  \"price\": 8.99,\r\n  \"is_available\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/menu-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "menu-items"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "outlets",
+      "item": [
+        {
+          "name": "/outlets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/outlets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "outlets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "specific-outlets",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/outlets/10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "outlets",
+                "10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create outlets",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Taco Haven\",\r\n  \"address\": \"789 Boulevard Rd, Foodville\",\r\n  \"owner_id\": \"b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22\",\r\n  \"is_active\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/outlets",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "outlets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update outlets",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Burger Joint Express (Downtown Branch)\",\r\n  \"address\": \"123 Main St, Suite 100, Foodville\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/outlets/10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "outlets",
+                "10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update outlets Copy",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Burger Joint Express (Downtown Branch)\",\r\n  \"address\": \"123 Main St, Suite 100, Foodville\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/outlets/9a3223a7-524d-4f3f-a59d-25356d70e631",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "outlets",
+                "9a3223a7-524d-4f3f-a59d-25356d70e631"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "/users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "financials",
+      "item": [
+        {
+          "name": "/financials",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer eyJhbGciOiJFUzI1NiIsImtpZCI6IjFmY2YzNmVhLTk4ZWItNGFjZS1hY2YwLTRjNzczNjk4Mzk0MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2d4YXVub2RjbXB4bnl3cmZjcmNkLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyNDlkZjNhNy1lZDUzLTRlYTYtOGYzYy0yMmI5ZjBjZTYzMzciLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg5ODM4NzcxLCJpYXQiOjE3ODk4MzUxNzEsImVtYWlsIjoia3Jpc2huYW5hZGltcGFsbGkxM0BnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsX3ZlcmlmaWVkIjp0cnVlfSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc4OTgzNTE3MX1dLCJzZXNzaW9uX2lkIjoiMzM5ODVlOGUtOWU0Yi00MzE2LWJhYjMtNzdlOTZhMjdmMjQ0IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.A6V9iEwERepbuGyiol8TiZOkrvrOB9LHsn3rnpR8MiU0iVUJTcYnDRixqr6o5ZSL0DlYwkYKVAsG0upZ4aEaiw",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/analytics/financials?outlet_id=10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "analytics",
+                "financials"
+              ],
+              "query": [
+                {
+                  "key": "outlet_id",
+                  "value": "10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Menu Item Popularity & Revenue",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer eyJhbGciOiJFUzI1NiIsImtpZCI6IjFmY2YzNmVhLTk4ZWItNGFjZS1hY2YwLTRjNzczNjk4Mzk0MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2d4YXVub2RjbXB4bnl3cmZjcmNkLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyNDlkZjNhNy1lZDUzLTRlYTYtOGYzYy0yMmI5ZjBjZTYzMzciLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg5ODM4NzcxLCJpYXQiOjE3ODk4MzUxNzEsImVtYWlsIjoia3Jpc2huYW5hZGltcGFsbGkxM0BnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsX3ZlcmlmaWVkIjp0cnVlfSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc4OTgzNTE3MX1dLCJzZXNzaW9uX2lkIjoiMzM5ODVlOGUtOWU0Yi00MzE2LWJhYjMtNzdlOTZhMjdmMjQ0IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.A6V9iEwERepbuGyiol8TiZOkrvrOB9LHsn3rnpR8MiU0iVUJTcYnDRixqr6o5ZSL0DlYwkYKVAsG0upZ4aEaiw",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/api/analytics/menu-popularity",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "analytics",
+                "menu-popularity"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Employee",
+      "item": [
+        {
+          "name": "/employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/Create employee",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user_id\": \"a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11\",\r\n  \"outlet_id\": \"10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11\",\r\n  \"designation\": \"Head Chef\",\r\n  \"hourly_rate\": 22.50,\r\n  \"monthly_salary\": 0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/employees",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "employees"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Wage Activities",
+      "item": [
+        {
+          "name": "/employees",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"payment_status\": \"paid\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/wages/0fc53224-5cae-4dac-acdf-1b64b36d24c5/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "wages",
+                "0fc53224-5cae-4dac-acdf-1b64b36d24c5",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Log Shift / Wage Record",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer eyJhbGciOiJFUzI1NiIsImtpZCI6IjFmY2YzNmVhLTk4ZWItNGFjZS1hY2YwLTRjNzczNjk4Mzk0MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2d4YXVub2RjbXB4bnl3cmZjcmNkLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyNDlkZjNhNy1lZDUzLTRlYTYtOGYzYy0yMmI5ZjBjZTYzMzciLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg5ODM0MzEyLCJpYXQiOjE3ODk4MzA3MTIsImVtYWlsIjoia3Jpc2huYW5hZGltcGFsbGkxM0BnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsX3ZlcmlmaWVkIjp0cnVlfSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc4OTgzMDcxMn1dLCJzZXNzaW9uX2lkIjoiYjNlOTY0YjItZTQwMy00NWRjLTgyZjMtYzA2NWZjMzE4MjY3IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.qcentL_NO3t5V8FRqWyBEd6J-PdtvmOqVIxR6Svv2pKj-HYeshFZjxYgAKOymoPQA5brGPEBncxMRMNdtiwwPQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"employee_id\": \"25b72072-d7a0-4326-bd6d-afbefb1f70b5\",\r\n  \"hours_worked\": 8,\r\n  \"notes\": \"Weekend dinner shift\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/wages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "wages"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "bearer eyJhbGciOiJFUzI1NiIsImtpZCI6IjFmY2YzNmVhLTk4ZWItNGFjZS1hY2YwLTRjNzczNjk4Mzk0MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2d4YXVub2RjbXB4bnl3cmZjcmNkLnN1cGFiYXNlLmNvL2F1dGgvdjEiLCJzdWIiOiIyNDlkZjNhNy1lZDUzLTRlYTYtOGYzYy0yMmI5ZjBjZTYzMzciLCJhdWQiOiJhdXRoZW50aWNhdGVkIiwiZXhwIjoxNzg5ODM4NzcxLCJpYXQiOjE3ODk4MzUxNzEsImVtYWlsIjoia3Jpc2huYW5hZGltcGFsbGkxM0BnbWFpbC5jb20iLCJwaG9uZSI6IiIsImFwcF9tZXRhZGF0YSI6eyJwcm92aWRlciI6ImVtYWlsIiwicHJvdmlkZXJzIjpbImVtYWlsIl19LCJ1c2VyX21ldGFkYXRhIjp7ImVtYWlsX3ZlcmlmaWVkIjp0cnVlfSwicm9sZSI6ImF1dGhlbnRpY2F0ZWQiLCJhYWwiOiJhYWwxIiwiYW1yIjpbeyJtZXRob2QiOiJwYXNzd29yZCIsInRpbWVzdGFtcCI6MTc4OTgzNTE3MX1dLCJzZXNzaW9uX2lkIjoiMzM5ODVlOGUtOWU0Yi00MzE2LWJhYjMtNzdlOTZhMjdmMjQ0IiwiaXNfYW5vbnltb3VzIjpmYWxzZX0.A6V9iEwERepbuGyiol8TiZOkrvrOB9LHsn3rnpR8MiU0iVUJTcYnDRixqr6o5ZSL0DlYwkYKVAsG0upZ4aEaiw",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"success\": true,\r\n  \"message\": \"Wage logged successfully\",\r\n  \"data\": {\r\n    \"id\": \"...\",\r\n    \"employee_id\": \"25b72072-d7a0-4326-bd6d-afbefb1f70b5\",\r\n    \"hours_worked\": 8,\r\n    \"amount\": 200,\r\n    \"payment_status\": \"pending\",\r\n    \"payment_date\": \"2026-09-19\",\r\n    \"notes\": \"Admin test wage entry\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/wages",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "wages"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "fetch order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders/e8e710a1-0aaa-4e40-91f6-765092128649",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "e8e710a1-0aaa-4e40-91f6-765092128649"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update order",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"confirmed\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/e8e710a1-0aaa-4e40-91f6-765092128649/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "e8e710a1-0aaa-4e40-91f6-765092128649",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create Order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user_id\": \"b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22\",\r\n  \"outlet_id\": \"10eebc99-9c0b-4ef8-bb6d-6bb9bd380b11\",\r\n  \"items\": [\r\n    {\r\n      \"menu_item_id\": \"20eebc99-9c0b-4ef8-bb6d-6bb9bd380c11\",\r\n      \"quantity\": 1,\r\n      \"price\": 4.99\r\n    },\r\n    {\r\n      \"menu_item_id\": \"20eebc99-9c0b-4ef8-bb6d-6bb9bd380c11\",\r\n      \"quantity\": 2,\r\n      \"price\": 3.49\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/orders/checkout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "checkout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Payments",
+      "item": [
+        {
+          "name": "fetch order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders/e8e710a1-0aaa-4e40-91f6-765092128649",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "e8e710a1-0aaa-4e40-91f6-765092128649"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "payments/process",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"order_id\": \"e8e710a1-0aaa-4e40-91f6-765092128649\",\r\n  \"payment_method\": \"upi\",\r\n  \"amount\": 11.97,\r\n  \"transaction_id\": \"UPI-IND-9847120938\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/payments/process",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "payments",
+                "process"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Assign Delivery Partner",
+      "item": [
+        {
+          "name": "update delievery",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"status\": \"delivered\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/deliveries/f66e2385-0529-4e23-a04d-2da617f5b3f4/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "deliveries",
+                "f66e2385-0529-4e23-a04d-2da617f5b3f4",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/deliveries/assign",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"order_id\": \"e8e710a1-0aaa-4e40-91f6-765092128649\",\r\n  \"driver_id\": \"c0eebc99-9c0b-4ef8-bb6d-6bb9bd380a33\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/deliveries/assign",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "deliveries",
+                "assign"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "fetch order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/orders/e8e710a1-0aaa-4e40-91f6-765092128649",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "orders",
+                "e8e710a1-0aaa-4e40-91f6-765092128649"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "token",
+      "item": [
+        {
+          "name": "token genereation",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"alice@example.com\",\r\n  \"password\": \"YourPassword123!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@example.com\",\r\n  \"password\": \"YourPassword123!\",\r\n  \"name\": \"Platform Admin\",\r\n  \"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/signup",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "signup"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
